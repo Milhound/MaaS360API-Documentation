@@ -1,0 +1,21 @@
+_id: req_wrk_0bde3f3420584669a5d130c07a71bd81acf98058
+authentication: {}
+body: {}
+created: 1594685565833
+description: ""
+headers: []
+isPrivate: false
+metaSortKey: -1594685565833
+method: POST
+modified: 1594732476187
+name: /auth-apis/auth/1.0/authenticate/{billingID}
+parameters: []
+parentId: fld_wrk_0bde3f3420584669a5d130c07a71bd81ee1acfa5
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingFollowRedirects: global
+settingRebuildPath: true
+settingSendCookies: true
+settingStoreCookies: true
+type: Request
+url: "{{ base_url }}/auth-apis/auth/1.0/authenticate/{{ billingID }}"

@@ -1,0 +1,10 @@
+_id: fld_wrk_0bde3f3420584669a5d130c07a71bd81ee1acfa5
+created: 1594685565838
+description: Generate a MaaS360 API token
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1594685565838
+modified: 1594732476189
+name: Authentication
+parentId: wrk_0bde3f3420584669a5d130c07a71bd81
+type: RequestGroup

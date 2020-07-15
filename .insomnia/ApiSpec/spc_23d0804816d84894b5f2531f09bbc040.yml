@@ -1,0 +1,124 @@
+_id: spc_23d0804816d84894b5f2531f09bbc040
+contentType: yaml
+contents: >
+  openapi: 3.0.0
+
+  info:
+    title: MaaS360 Web Services
+    version: '10.78'
+    contact:
+      name: Daniel Milholland
+      email: Daniel.Milholland@ibm.com
+  servers:
+    - url: 'https://services.m3.maas360.com/'
+      description: M3
+    - url: 'https://services.fiberlink.com/'
+      description: M1
+    - url: 'https://services.m2.maas360.com/'
+      description: M2
+    - url: 'https://services.m4.maas360.com/'
+      description: M4
+    - url: 'https://services.m6.maas360.com/'
+      description: M5
+  tags:
+    - name: Authentication
+      description: Generate a MaaS360 API token
+  paths:
+    '/auth-apis/auth/1.0/authenticate/{billingID}':
+      post:
+        tags:
+          - Authentication
+        parameters:
+          - in: path
+            name: billingID
+            description: MaaS360 Portal Billing ID
+            required: true
+            schema:
+              type: string
+            
+        requestBody:
+          content:
+            application/xml:
+              schema:
+                description: Authentication request body object
+                $ref: '#/components/schemas/authRequest'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authRequest'
+                 
+        responses:
+          '200':
+            description: Success!
+            content:
+              application/xml:
+                schema:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      authToken:
+                        type: string
+                      errorCode:
+                        type: string
+                    example:
+                      authToken: ed945b6f-0c0a-4fb0-ac39-d8d4d0313d24-E6gKcVW
+                      errorCode: '0'
+                  xml:
+                    name: authResponse
+  components:
+    schemas:
+      authRequest:
+        type: object
+        required: 
+          - maaS360AdminAuth
+        properties:
+          maaS360AdminAuth:
+           type: object
+           required: 
+             - billingID
+             - platformID
+             - appID
+             - appVersion
+             - appAccessKey
+             - userName
+             - password
+           properties:
+             billingID:
+                 type: string
+             platformID: 
+                 type: string
+             appID:
+                 type: string
+             appVersion:
+                 type: string
+             appAccessKey:
+                 type: string
+             userName:
+                 type: string
+             password:
+                 type: string
+        example:
+          authRequest:
+            maaS360AdminAuth:
+              billingID: '00000000'
+              platformID: 3
+              appID: com.example.api
+              appVersion: '1.0'
+              appAccessKey: 6FVpn8YnM3
+              userName: test
+              password: P@assword1!
+        xml:
+          name: authRequest
+
+        
+
+        
+  externalDocs:
+    description: IBM MaaS360 Web Services Documentation
+    url: >-
+      https://kb.maaslab.uspa.ibm.com/pages/viewpage.action?spaceKey=dproc&title=Webservices
+created: 1594676814321
+fileName: MaaS360 Web Services 10.78
+modified: 1594771901187
+parentId: wrk_0bde3f3420584669a5d130c07a71bd81
+type: ApiSpec

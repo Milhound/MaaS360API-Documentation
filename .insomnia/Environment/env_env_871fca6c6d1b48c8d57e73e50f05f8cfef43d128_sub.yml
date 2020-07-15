@@ -1,0 +1,25 @@
+_id: env_env_871fca6c6d1b48c8d57e73e50f05f8cfef43d128_sub
+color: null
+created: 1594682027684
+data:
+  base_path: ""
+  host: services.m3.maas360.com
+  scheme: https
+dataPropertyOrder:
+  "&":
+    - base_path
+    - host
+    - scheme
+    - billing_id
+    - app_id
+    - api_key
+    - uname
+    - pword
+    - appVersion
+    - platformID
+isPrivate: false
+metaSortKey: 1594682027684
+modified: 1594732476192
+name: OpenAPI env
+parentId: env_871fca6c6d1b48c8d57e73e50f05f8cfef43d128
+type: Environment
